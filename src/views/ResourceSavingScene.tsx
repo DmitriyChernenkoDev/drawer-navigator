@@ -29,7 +29,7 @@ export default class ResourceSavingScene extends React.Component<Props> {
         removeClippedSubviews={
           // On iOS, set removeClippedSubviews to true only when not focused
           // This is an workaround for a bug where the clipped view never re-appears
-          Platform.OS === 'ios' ? navigationState.index !== index : true
+          Platform.OS === 'ios' ? !isVisible : false
         }
         pointerEvents={isVisible ? 'auto' : 'none'}
         {...rest}
