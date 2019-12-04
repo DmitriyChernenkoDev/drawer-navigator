@@ -10,14 +10,6 @@
     "src",
     "lib"
   ],
-  "scripts": {
-    "test": "jest",
-    "typescript": "tsc --noEmit",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn",
-    "prepare": "bob build",
-    "release": "release-it"
-  },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
@@ -100,14 +92,5 @@
     "transform": {
       "^.+\\.(js|ts|tsx)$": "babel-jest"
     }
-  },
-  "@react-native-community/bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "commonjs",
-      "module",
-      "typescript"
-    ]
-  }
+  }  
 }
