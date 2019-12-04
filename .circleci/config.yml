@@ -32,13 +32,6 @@ jobs:
       - persist_to_workspace:
           root: .
           paths: .
-  lint:
-      <<: *defaults
-      steps:
-        - attach_workspace:
-            at: ~/project
-        - run: |
-            yarn lint
   typescript:
       <<: *defaults
       steps:
@@ -67,9 +60,6 @@ workflows:
   build-and-test:
     jobs:
       - install-dependencies
-      - lint:
-          requires:
-            - install-dependencies
       - typescript:
           requires:
             - install-dependencies
